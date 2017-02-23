@@ -17,7 +17,7 @@ class App extends React.Component {
     <div>
       <Nav />
         <div className="col-md-7">
-          <VideoPlayer video={this.state.videos[0]}/>
+          <VideoPlayer video={this.state.currentvideo || this.state.videos[0]}/>
         </div>
         <div className="col-md-5">
           <VideoList Clicker={this.onVideoClick.bind(this)} videos={this.state.videos}/>
