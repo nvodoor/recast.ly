@@ -1,14 +1,17 @@
 var searchYouTube = (options, callback) => {
-  // TODO
-  console.log(options.query);
-  console.log(callback);
+
   $.ajax({
     url: 'https://www.googleapis.com/youtube/v3/search',
     type: 'GET',
-    data: {key: options.key, q: options.query, maxResults: options.max},
+    data: {key: options.key, q: options.query, maxResults: options.max, part: 'snippet', order: 'date', videoEmbeddable:'true'},
     contentType: 'application/json',
     success: function(data) {
-      console.log(data);
+      console.log(callback);
+      callback(data.items);
+      // data.items.forEach(function(value) {
+      //   callback(value);
+      // });
+      
     }
   });
 };

@@ -2,7 +2,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      videos: window.exampleVideoData,
+      videos: props.videos || window.exampleVideoData,
       currentvideo: null
     };
   }
