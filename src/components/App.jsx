@@ -2,11 +2,9 @@ var App = (props) => (
   <div>
     <Nav />
     <div className="col-md-7">
-      <VideoPlayer/>
+      <VideoPlayer video={props.videos[0]}/>
     </div>
     <div className="col-md-5">
-      {console.log("props", props)};
-      {console.log("window", window.exampleVideoData)};
       <VideoList videos={props.videos}/>
     </div>
   </div>
