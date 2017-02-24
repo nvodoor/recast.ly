@@ -7,10 +7,6 @@ var searchYouTube = (options, callback) => {
     contentType: 'application/json',
     success: function(data) {
       callback(data.items);
-      // data.items.forEach(function(value) {
-      //   callback(value);
-      // });
-      
     }
   });
 };
