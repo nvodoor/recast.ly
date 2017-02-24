@@ -14,10 +14,6 @@ class App extends React.Component {
     this.setState({currentvideo: video});
   }
 
-  onKeyRelease(searchtext) {
-    this.componentDidMount(this.text);
-  }
-
   storeInputText(text) {
     this.componentDidMount(text);
   }
@@ -26,7 +22,7 @@ class App extends React.Component {
 
     return (
     <div>
-      <Nav searchEvent={this.onKeyRelease.bind(this)} inputTextEvent={this.storeInputText.bind(this)}/>
+      <Nav inputTextEvent={this.storeInputText.bind(this)}/>
         <div className="col-md-7">
           <VideoPlayer video={this.state.currentvideo || this.state.videos[0]}/>
         </div>

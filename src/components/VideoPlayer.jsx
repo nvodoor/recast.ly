@@ -1,4 +1,4 @@
-var baseURL = "https://www.youtube.com/embed/";
+var baseURL = 'https://www.youtube.com/embed/';
 
 var VideoPlayer = (props) => (
   <div className="video-player">
