@@ -2,6 +2,6 @@
 
 //searchYouTube({key: 'AIzaSyCbs-YSZJ_Ya37LFtEhfW7eayDyrJFJIMc', query: 'dogs', maxResults: 5}, (data) => {data; });
 
-ReactDOM.render(<App searchYouTube={window.searchYouTube}/>, document.getElementById('app'));
+ReactDOM.render(<App searchYouTube={_.debounce(window.searchYouTube, 500)}/>, document.getElementById('app'));
 
 //test
