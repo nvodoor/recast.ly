@@ -1,6 +1,7 @@
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.text = '';
     this.state = {
       videos: props.videos || window.exampleVideoData,
       currentvideo: null,
@@ -14,14 +15,18 @@ class App extends React.Component {
   }
 
   onKeyRelease(searchtext) {
-    this.componentDidMount(this.state.inputText);
+    this.componentDidMount(this.text);
+  }
+
+  storeInputText(text) {
+    this.componentDidMount(text);
   }
 
   render() {
 
     return (
     <div>
-      <Nav searchEvent={this.onKeyRelease.bind(this)}/>
+      <Nav searchEvent={this.onKeyRelease.bind(this)} inputTextEvent={this.storeInputText.bind(this)}/>
         <div className="col-md-7">
           <VideoPlayer video={this.state.currentvideo || this.state.videos[0]}/>
         </div>
@@ -33,7 +38,7 @@ class App extends React.Component {
   componentDidMount(query = 'cute puppies') {
 
     this.props.searchYouTube({key: 'AIzaSyCbs-YSZJ_Ya37LFtEhfW7eayDyrJFJIMc', query: query, maxResults: 5}, 
-    (data) => { this.setState({videos: data, currentvideo: this.state.videos[0]}); });
+    (data) => { this.setState({videos: data, currentvideo: this.state.videos[0], inputText: query}); });
   }
 
 
